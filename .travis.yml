@@ -13,3 +13,10 @@ install: pip3 install --upgrade pip  # all three OSes agree about 'pip3'
 # 'python' points to Python 2.7 on macOS but points to Python 3.8 on Linux and Windows
 # 'python3' is a 'command not found' error on Windows but 'py' works on Windows only
 script: pyinstaller --onefile main.py
+after_success:
+deploy:
+  provider: releases
+  api_key: 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
+  file: C:\Users\travis\build\vrednyj\Experiment\dist\main.exe
+  skip_cleanup: true
+  draft: true
