@@ -19,6 +19,7 @@ after_success:
   - git checkout -b builds
   - git add C:/Users/travis/build/vrednyj/Experiment/dist/main.exe
   - git commit --message "Builds"
-  - git remote add origin https://${GH_TOKEN}/vrednyj/Experiment.git > /dev/null 2>&1
+after_success:
+  - git remote add origin https://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/vrednyj/Experiment.git > /dev/null 2>&1
   - git push origin builds:builds
   - git push --set-upstream origin builds
