@@ -19,7 +19,7 @@ after_success:
   - git checkout -b builds
   - git status
   after_success:
-  - git add C:/Users/travis/build/vrednyj/Experiment/dist/main.exe
+  - git add ./travis/.
   - git status
   after_success:
   - git commit --message "Builds"
