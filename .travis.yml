@@ -17,9 +17,10 @@ after_success:
   - git config --global user.email "L00169827@student.lyit.ie"
   - git config --global user.name "vrednyj"
   - git checkout -b builds
-  - git add C:/Users/travis/build/vrednyj/Experiment/dist/main.exe
+  - git status
+  - git add C/Users/travis/build/vrednyj/Experiment/dist/main.exe
+  - git status
   - git commit --message "Builds"
-after_success:
   - git remote add origin https://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/vrednyj/Experiment.git
   - git push origin builds:builds
   - git push --set-upstream origin main
