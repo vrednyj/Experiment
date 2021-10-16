@@ -16,7 +16,9 @@ script: pyinstaller --onefile main.py
 after_success:
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "vrednyj"
-  - git checkout -b gh-pages
-  - git add .Experiment\dist\main.exe
-  - git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
-  - git push origin
+  - git checkout -b builds
+  - git add .Experiment/dist/main.exe
+  - git commit -m"Travis build: $TRAVIS_BUILD_NUMBER"
+  - git remote add origin https://github.com/vrednyj/Experiment.git > /dev/null 2>&1
+  - git push origin builds:builds
+  - git push --quiet --set-upstream origin builds
